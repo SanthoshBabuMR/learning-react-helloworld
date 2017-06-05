@@ -1,22 +1,29 @@
-var path = require('path'),
-    webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const srcPath = path.join(__dirname, 'app', 'src');
+const buildPath = path.join(__dirname, 'app', 'build');
 
 module.exports = {
-  devServer: {
-    contentBase: __dirname + "/dist",
-    port: 3030
-  },
-  entry: [
-    './index.js'
-  ],
+  context: srcPath,
+  entry: path.join(srcPath, 'js', 'app.js'),
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'bundle.js'
+    path: buildPath,
+    filename: 'js/bundle.js'
   },
   module: {
-    loaders: [{
-      test: /(\.js$)|(\.jsx$)/,
-      loaders: ['babel', 'babel-loader']
+    rules: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: ['babel-loader']
     }]
+  },
+  plugins: [new HtmlWebpackPlugin({
+    filename: 'index.html',
+    title: 'ReactJS hello world'
+  })],
+  devServer: {
+    contentBase: buildPath,
+    compress: true,
+    port: 9000
   }
-};
+}

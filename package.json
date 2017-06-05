@@ -1,7 +1,7 @@
 {
   "name": "learning-react-helloworld",
   "version": "1.0.0",
-  "description": "react-skeleton for providing the development setup",
+  "description": "",
   "main": "index.js",
   "author": "Santhosh Babu <html5webster@gmail.com>",
   "license": "MIT",
@@ -10,27 +10,21 @@
     "url": "https://github.com/html5webster/learning-react-helloworld.git"
   },
   "scripts": {
-    "start": "npm-run-all build server",
-    "server": "webpack-dev-server",
-    "build": "npm-run-all build:js build:html",
-    "build:js": "webpack --progress --color",
-    "build:html": "html-minifier src/index.html --output dist/index.html --config-file htmlMinification.conf"
+    "start": "webpack-dev-server"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "react-router": "^2.6.0",
-    "react-router-redux": "^4.0.5",
-    "redux": "^3.5.2"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-core": "^6.11.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "html-minifier": "^3.0.1",
-    "npm-run-all": "^2.3.0",
-    "webpack": "^1.13.1"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   }
 }
