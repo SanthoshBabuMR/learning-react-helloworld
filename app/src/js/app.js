@@ -4,9 +4,22 @@ import HelloWorld from './hello-world';
 import Timer from './timer'
 import Toggle from './toggle'
 import LoginControl from './login-control'
+import ListComponent from './list-component'
 
 class App extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      test: 1
+    }
+  }
+  componentDidMount () {
+    setInterval(() => {
+      this.setState({test: this.state.test + 2})
+    }, 3000)
+  }
   render () {
+    console.log(this.state.test);
     return (
       <div>
         <i>Hello World</i>
@@ -17,10 +30,13 @@ class App extends React.Component {
         <Timer />
         <hr />
         <i>Event</i>
-        <Toggle />
+        <Toggle isToggleOn={this.state.test%2 === 0? 'ON' : 'OFF'}/>
         <hr />
         <i>Conditional</i>
         <LoginControl />
+        <hr />
+        <i>list component</i>
+        <ListComponent list={[10,20,30,40]} />
         <hr />
       </div>
     );

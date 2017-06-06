@@ -47,7 +47,6 @@ class LoginControl extends React.Component {
     } else {
       button = <LoginButton onClick={this.handleLoginClick} />;
     }
-    debugger;
     return (
       <div>
         <Greeting isLoggedIn={isLoggedIn} user={user}/>

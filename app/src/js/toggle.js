@@ -1,12 +1,18 @@
 import React from 'react';
 
 class Toggle extends React.Component {
-  constructor (){
-    super ();
+  constructor (props){
+    super (props);
     this.state = {
-      isToggleOn: false
+      isToggleOn: this.props.isToggleOn
     }
     this.handleClick = (e) => this._handleClick(e);
+  }
+
+  componentWillReceiveProps (props) {
+    this.setState({
+      isToggleOn: props.isToggleOn
+    })
   }
 
   render () {
