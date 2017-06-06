@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import HelloWorld from './hello-world';
 import Timer from './timer'
 import Toggle from './toggle'
-import Greeting from './greeting.js'
+import LoginControl from './login-control'
 
 class App extends React.Component {
   render () {
@@ -20,8 +20,7 @@ class App extends React.Component {
         <Toggle />
         <hr />
         <i>Conditional</i>
-        <Greeting />
-        <Greeting user='Santhosh babu' isUserLoggedIn />
+        <LoginControl />
         <hr />
       </div>
     );

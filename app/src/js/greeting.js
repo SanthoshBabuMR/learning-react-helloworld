@@ -9,7 +9,7 @@ function GuestGreeting (props) {
 }
 
 function Greeting (props) {
-  if (props.isUserLoggedIn) {
+  if (props.isLoggedIn) {
     return UserGreeting(props);
   } else {
     return GuestGreeting(props);
