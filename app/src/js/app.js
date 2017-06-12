@@ -5,6 +5,7 @@ import Timer from './timer'
 import Toggle from './toggle'
 import LoginControl from './login-control'
 import ListComponent from './list-component'
+import Calculator from './Calculator'
 
 class App extends React.Component {
   constructor () {
@@ -37,6 +38,9 @@ class App extends React.Component {
         <hr />
         <i>list component</i>
         <ListComponent list={[10,20,30,40]} />
+        <hr />
+        <i>Lifting state up</i>
+        <Calculator />
         <hr />
       </div>
     );
