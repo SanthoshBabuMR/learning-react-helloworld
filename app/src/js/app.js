@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloWorld from './hello-world';
-import Timer from './timer'
-import Toggle from './toggle'
-import LoginControl from './login-control'
-import ListComponent from './list-component'
-import Calculator from './Calculator'
+import Timer from './timer';
+import Toggle from './toggle';
+import LoginControl from './login-control';
+import ListComponent from './list-component';
+import Calculator from './Calculator';
+import WelcomeDialog from './WelcomeDialog';
 
 class App extends React.Component {
   constructor () {
@@ -41,6 +42,9 @@ class App extends React.Component {
         <hr />
         <i>Lifting state up</i>
         <Calculator />
+        <hr />
+        <i>Composition</i>
+        <WelcomeDialog />
         <hr />
       </div>
     );
